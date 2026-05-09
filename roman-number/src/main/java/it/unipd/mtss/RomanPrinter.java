@@ -15,7 +15,6 @@ public class RomanPrinter { //
         "|_____|"
     };
 
-    // Definiamo le 6 righe dell'ASCII art per la lettera 'V'
     private static final String[] V = {
         "\\      /",
         " \\    / ",
@@ -23,6 +22,16 @@ public class RomanPrinter { //
         "   \\/   ",
         "   ||   ",
         "   ||   "
+    };
+
+    // Definiamo le 6 righe per la lettera 'X'
+    private static final String[] X = {
+        "\\   / ",
+        " \\ /  ",
+        "  X   ",
+        " / \\  ",
+        "/   \\ ",
+        "      "
     };
 
     public static String print(int num) { //
@@ -36,7 +45,6 @@ public class RomanPrinter { //
 
         StringBuilder asciiArt = new StringBuilder();
 
-        // Costruiamo il disegno riga per riga
         for (int riga = 0; riga < 6; riga++) {
             for (int i = 0; i < romanNumber.length(); i++) {
                 char lettera = romanNumber.charAt(i);
@@ -44,7 +52,9 @@ public class RomanPrinter { //
                 if (lettera == 'I') {
                     asciiArt.append(I[riga]);
                 } else if (lettera == 'V') {
-                    asciiArt.append(V[riga]); // Usiamo il disegno della V
+                    asciiArt.append(V[riga]);
+                } else if (lettera == 'X') {
+                    asciiArt.append(X[riga]); // Aggiungiamo la X alla stampa
                 } else {
                     throw new IllegalArgumentException("Carattere non supportato per ora: " + lettera);
                 }
