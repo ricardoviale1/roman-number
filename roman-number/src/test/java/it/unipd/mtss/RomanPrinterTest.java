@@ -39,4 +39,23 @@ public class RomanPrinterTest {
 
         assertEquals(expected, RomanPrinter.print(number));
     }
+    @Test
+    public void testPrintTen() {
+        // Arrange
+        int number = 10; // Corrisponde a "X"
+        
+        String expected = 
+            "\\   /  \n" +
+            " \\ /   \n" +
+            "  X    \n" +
+            " / \\   \n" +
+            "/   \\  \n" +
+            "       \n";
+
+        // Act
+        String result = RomanPrinter.print(number);
+
+        // Assert
+        assertEquals(expected, result);
+    }
 }
