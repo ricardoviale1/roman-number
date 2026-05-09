@@ -2,9 +2,9 @@
 // RICARDO VIALE 2150737
 // TOMMASO ZORZETTO 2148629
 /////////////////////////////////
-package it.unipd.mtss; //
+package it.unipd.mtss;
 
-public class RomanPrinter { //
+public class RomanPrinter {
     
     private static final String[] I = {
         " _____ ",
@@ -24,7 +24,6 @@ public class RomanPrinter { //
         "   ||   "
     };
 
-    // Definiamo le 6 righe per la lettera 'X'
     private static final String[] X = {
         "\\   / ",
         " \\ /  ",
@@ -34,11 +33,21 @@ public class RomanPrinter { //
         "      "
     };
 
-    public static String print(int num) { //
-        return printAsciiArt(IntegerToRoman.convert(num)); //
+    // Definiamo le 6 righe per la lettera 'L'
+    private static final String[] L = {
+        " _      ",
+        "| |     ",
+        "| |     ",
+        "| |     ",
+        "| |___  ",
+        "|_____| "
+    };
+
+    public static String print(int num) {
+        return printAsciiArt(IntegerToRoman.convert(num));
     }
 
-    private static String printAsciiArt(String romanNumber) { //
+    private static String printAsciiArt(String romanNumber) {
         if (romanNumber == null || romanNumber.isEmpty()) {
             return "";
         }
@@ -54,9 +63,11 @@ public class RomanPrinter { //
                 } else if (lettera == 'V') {
                     asciiArt.append(V[riga]);
                 } else if (lettera == 'X') {
-                    asciiArt.append(X[riga]); // Aggiungiamo la X alla stampa
+                    asciiArt.append(X[riga]);
+                } else if (lettera == 'L') {
+                    asciiArt.append(L[riga]); // Aggiungiamo la L alla stampa
                 } else {
-                    throw new IllegalArgumentException("Carattere non supportato per ora: " + lettera);
+                    throw new IllegalArgumentException("Carattere non supportato: " + lettera);
                 }
                 
                 asciiArt.append(" ");
