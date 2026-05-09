@@ -73,4 +73,18 @@ public class RomanPrinterTest {
 
         assertEquals(expected, RomanPrinter.print(number));
     }
+    @Test
+    public void testPrintFifty() {
+        int number = 50; // Corrisponde a "L"
+        
+        String expected = 
+            " _       \n" +
+            "| |      \n" +
+            "| |      \n" +
+            "| |      \n" +
+            "| |___   \n" +
+            "|_____|  \n";
+
+        assertEquals(expected, RomanPrinter.print(number));
+    }
 }
