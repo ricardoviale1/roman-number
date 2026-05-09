@@ -51,7 +51,6 @@ public class RomanPrinter {
         " \\____/"
     };
 
-    // Definiamo la lettera 'D' (lunghezza costante di 8 caratteri)
     private static final String[] D = {
         " _____  ",
         "|  __ \\ ",
@@ -59,6 +58,16 @@ public class RomanPrinter {
         "| |  | |",
         "| |__| |",
         "|_____/ "
+    };
+
+    // Definiamo la lettera 'M' (lunghezza costante di 8 caratteri)
+    private static final String[] M = {
+        "|  \\/  |",
+        "| .  . |",
+        "| |\\/| |",
+        "| |  | |",
+        "| |  | |",
+        "|_|  |_|"
     };
 
     public static String print(int num) {
@@ -87,7 +96,9 @@ public class RomanPrinter {
                 } else if (lettera == 'C') {
                     asciiArt.append(C[riga]);
                 } else if (lettera == 'D') {
-                    asciiArt.append(D[riga]); // Aggiungiamo la D
+                    asciiArt.append(D[riga]);
+                } else if (lettera == 'M') {
+                    asciiArt.append(M[riga]); // Abilitiamo la M
                 } else {
                     throw new IllegalArgumentException("Carattere non supportato: " + lettera);
                 }
