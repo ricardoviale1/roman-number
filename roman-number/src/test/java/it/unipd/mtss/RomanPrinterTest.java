@@ -58,4 +58,19 @@ public class RomanPrinterTest {
         // Assert
         assertEquals(expected, result);
     }
+    @Test
+    public void testPrintFifteen() {
+        int number = 15; // Corrisponde a "XV"
+        
+        // Unione del disegno di X e V con uno spazio in mezzo e l'andata a capo
+        String expected = 
+            "\\   /  \\      / \n" +
+            " \\ /    \\    /  \n" +
+            "  X      \\  /   \n" +
+            " / \\      \\/    \n" +
+            "/   \\     ||    \n" +
+            "          ||    \n";
+
+        assertEquals(expected, RomanPrinter.print(number));
+    }
 }

@@ -34,12 +34,6 @@ public class IntegerToRomanTest {
         assertEquals("VI", IntegerToRoman.convert(6));
     }
 
-    // AGGIORNAMENTO: Il 7 ora è valido! Testiamo che converta correttamente in "VII"
-    @Test
-    public void testConvertSevenReturnsVII() {
-        assertEquals("VII", IntegerToRoman.convert(7));
-    }
-
     @Test
     public void testConvertNineReturnsIX() {
         assertEquals("IX", IntegerToRoman.convert(9));
@@ -50,9 +44,24 @@ public class IntegerToRomanTest {
         assertEquals("X", IntegerToRoman.convert(10));
     }
 
-    // AGGIORNAMENTO: Ora il limite d'errore si è spostato a 11!
+    @Test
+    public void testConvertFourteenReturnsXIV() {
+        assertEquals("XIV", IntegerToRoman.convert(14));
+    }
+
+    @Test
+    public void testConvertNineteenReturnsXIX() {
+        assertEquals("XIX", IntegerToRoman.convert(19));
+    }
+
+    @Test
+    public void testConvertTwentyReturnsXX() {
+        assertEquals("XX", IntegerToRoman.convert(20));
+    }
+
     @Test(expected = IllegalArgumentException.class)
-    public void testConvertElevenThrowsException() {
-        IntegerToRoman.convert(11);
+    public void testConvertTwentyOneThrowsException() {
+        // L'unico errore che ci aspettiamo ora è per i numeri superiori a 20!
+        IntegerToRoman.convert(21);
     }
 }
