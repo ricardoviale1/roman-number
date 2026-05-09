@@ -6,14 +6,14 @@ package it.unipd.mtss;
 
 public class IntegerToRoman {
     
-    // Aggiungiamo 50 (L) e 40 (XL) in testa per la conversione greedy
-    private static final int[] VALUES = {50, 40, 10, 9, 5, 4, 1};
-    private static final String[] SYMBOLS = {"L", "XL", "X", "IX", "V", "IV", "I"};
+    // Aggiungiamo 100 (C) e 90 (XC) in testa per l'algoritmo greedy
+    private static final int[] VALUES = {100, 90, 50, 40, 10, 9, 5, 4, 1};
+    private static final String[] SYMBOLS = {"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
 
     public static String convert(int number) {
-        // Ora il limite massimo sale a 50!
-        if (number < 1 || number > 50) {
-            throw new IllegalArgumentException("Per ora supportiamo solo i numeri da 1 a 50!");
+        // Ora il limite massimo sale a 100!
+        if (number < 1 || number > 100) {
+            throw new IllegalArgumentException("Per ora supportiamo solo i numeri da 1 a 100!");
         }
 
         StringBuilder roman = new StringBuilder();

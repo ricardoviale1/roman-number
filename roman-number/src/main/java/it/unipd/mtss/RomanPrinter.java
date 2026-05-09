@@ -33,7 +33,6 @@ public class RomanPrinter {
         "      "
     };
 
-    // Definiamo le 6 righe per la lettera 'L'
     private static final String[] L = {
         " _      ",
         "| |     ",
@@ -41,6 +40,16 @@ public class RomanPrinter {
         "| |     ",
         "| |___  ",
         "|_____| "
+    };
+
+    // La versione corretta con i singoli backslash correttamente escapati (solo 2 backslash!)
+    private static final String[] C = {
+        " _____ ",
+        "/  __ \\",
+        "| /  \\/",
+        "| |    ",
+        "| \\__/\\",
+        " \\____/"
     };
 
     public static String print(int num) {
@@ -65,7 +74,9 @@ public class RomanPrinter {
                 } else if (lettera == 'X') {
                     asciiArt.append(X[riga]);
                 } else if (lettera == 'L') {
-                    asciiArt.append(L[riga]); // Aggiungiamo la L alla stampa
+                    asciiArt.append(L[riga]);
+                } else if (lettera == 'C') {
+                    asciiArt.append(C[riga]);
                 } else {
                     throw new IllegalArgumentException("Carattere non supportato: " + lettera);
                 }

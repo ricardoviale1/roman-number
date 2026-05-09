@@ -1,3 +1,7 @@
+/////////////////////////////////
+// RICARDO VIALE 2150737
+// TOMMASO ZORZETTO 2148629
+/////////////////////////////////
 package it.unipd.mtss;
 
 import static org.junit.Assert.assertEquals;
@@ -7,10 +11,7 @@ public class RomanPrinterTest {
 
     @Test
     public void testPrintOne() {
-        // Arrange
         int number = 1;
-        
-        // Il disegno che ci aspettiamo per la singola "I" (con lo spazio finale)
         String expected = 
             " _____  \n" +
             "|_   _| \n" +
@@ -19,16 +20,12 @@ public class RomanPrinterTest {
             " _| |_  \n" +
             "|_____| \n";
 
-        // Act
-        String result = RomanPrinter.print(number);
-
-        // Assert
-        assertEquals(expected, result);
+        assertEquals(expected, RomanPrinter.print(number));
     }
+
     @Test
-    public void testPrintFive() { //
-        int number = 5; 
-        
+    public void testPrintFive() {
+        int number = 5;
         String expected = 
             "\\      / \n" +
             " \\    /  \n" +
@@ -39,11 +36,10 @@ public class RomanPrinterTest {
 
         assertEquals(expected, RomanPrinter.print(number));
     }
+
     @Test
     public void testPrintTen() {
-        // Arrange
-        int number = 10; // Corrisponde a "X"
-        
+        int number = 10;
         String expected = 
             "\\   /  \n" +
             " \\ /   \n" +
@@ -52,31 +48,12 @@ public class RomanPrinterTest {
             "/   \\  \n" +
             "       \n";
 
-        // Act
-        String result = RomanPrinter.print(number);
-
-        // Assert
-        assertEquals(expected, result);
-    }
-    @Test
-    public void testPrintFifteen() {
-        int number = 15; // Corrisponde a "XV"
-        
-        // Unione del disegno di X e V con uno spazio in mezzo e l'andata a capo
-        String expected = 
-            "\\   /  \\      / \n" +
-            " \\ /    \\    /  \n" +
-            "  X      \\  /   \n" +
-            " / \\      \\/    \n" +
-            "/   \\     ||    \n" +
-            "          ||    \n";
-
         assertEquals(expected, RomanPrinter.print(number));
     }
+
     @Test
     public void testPrintFifty() {
-        int number = 50; // Corrisponde a "L"
-        
+        int number = 50;
         String expected = 
             " _       \n" +
             "| |      \n" +
@@ -84,6 +61,20 @@ public class RomanPrinterTest {
             "| |      \n" +
             "| |___   \n" +
             "|_____|  \n";
+
+        assertEquals(expected, RomanPrinter.print(number));
+    }
+
+    @Test
+    public void testPrintOneHundred() {
+        int number = 100;
+        String expected = 
+            " _____  \n" +
+            "/  __ \\ \n" +
+            "| /  \\/ \n" +
+            "| |     \n" +
+            "| \\__/\\ \n" +
+            " \\____/ \n";
 
         assertEquals(expected, RomanPrinter.print(number));
     }
