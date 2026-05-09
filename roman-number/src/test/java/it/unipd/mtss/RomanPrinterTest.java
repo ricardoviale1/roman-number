@@ -78,4 +78,18 @@ public class RomanPrinterTest {
 
         assertEquals(expected, RomanPrinter.print(number));
     }
+    @Test
+    public void testPrintFiveHundred() {
+        int number = 500; // Corrisponde a "D"
+        
+        String expected = 
+            " _____   \n" +
+            "|  __ \\  \n" +
+            "| |  | | \n" +
+            "| |  | | \n" +
+            "| |__| | \n" +
+            "|_____/  \n";
+
+        assertEquals(expected, RomanPrinter.print(number));
+    }
 }

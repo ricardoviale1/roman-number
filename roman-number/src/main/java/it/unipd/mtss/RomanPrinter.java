@@ -42,7 +42,6 @@ public class RomanPrinter {
         "|_____| "
     };
 
-    // La versione corretta con i singoli backslash correttamente escapati (solo 2 backslash!)
     private static final String[] C = {
         " _____ ",
         "/  __ \\",
@@ -50,6 +49,16 @@ public class RomanPrinter {
         "| |    ",
         "| \\__/\\",
         " \\____/"
+    };
+
+    // Definiamo la lettera 'D' (lunghezza costante di 8 caratteri)
+    private static final String[] D = {
+        " _____  ",
+        "|  __ \\ ",
+        "| |  | |",
+        "| |  | |",
+        "| |__| |",
+        "|_____/ "
     };
 
     public static String print(int num) {
@@ -77,6 +86,8 @@ public class RomanPrinter {
                     asciiArt.append(L[riga]);
                 } else if (lettera == 'C') {
                     asciiArt.append(C[riga]);
+                } else if (lettera == 'D') {
+                    asciiArt.append(D[riga]); // Aggiungiamo la D
                 } else {
                     throw new IllegalArgumentException("Carattere non supportato: " + lettera);
                 }
