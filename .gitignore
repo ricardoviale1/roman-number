@@ -1,0 +1,8 @@
+# Ignora la cartella dei compilati di Maven
+**/target/
+
+# Ignora le impostazioni locali di VS Code e dell'IDE
+.vscode/
+.idea/
+*.iml
+.DS_Store
