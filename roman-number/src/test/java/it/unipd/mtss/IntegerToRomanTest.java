@@ -29,4 +29,23 @@ public class IntegerToRomanTest {
         // Assert
         assertEquals("III", result);
     }
+    @Test
+    public void testConvertFourReturnsIV() { //
+        assertEquals("IV", IntegerToRoman.convert(4));
+    }
+
+    @Test
+    public void testConvertFiveReturnsV() { //
+        assertEquals("V", IntegerToRoman.convert(5));
+    }
+
+    @Test
+    public void testConvertSixReturnsVI() { //
+        assertEquals("VI", IntegerToRoman.convert(6));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testConvertSevenThrowsException() { //
+        IntegerToRoman.convert(7); // Deve dare errore perché supportiamo fino a 6
+    }
 }
