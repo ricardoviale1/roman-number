@@ -25,4 +25,18 @@ public class RomanPrinterTest {
         // Assert
         assertEquals(expected, result);
     }
+    @Test
+    public void testPrintFive() { //
+        int number = 5; 
+        
+        String expected = 
+            "\\      / \n" +
+            " \\    /  \n" +
+            "  \\  /   \n" +
+            "   \\/    \n" +
+            "   ||    \n" +
+            "   ||    \n";
+
+        assertEquals(expected, RomanPrinter.print(number));
+    }
 }

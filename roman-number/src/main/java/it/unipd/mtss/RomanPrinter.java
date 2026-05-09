@@ -2,11 +2,10 @@
 // RICARDO VIALE 2150737
 // TOMMASO ZORZETTO 2148629
 /////////////////////////////////
-package it.unipd.mtss;
+package it.unipd.mtss; //
 
-public class RomanPrinter {
+public class RomanPrinter { //
     
-    // Definiamo le 6 righe dell'ASCII art per la lettera 'I'
     private static final String[] I = {
         " _____ ",
         "|_   _|",
@@ -16,35 +15,42 @@ public class RomanPrinter {
         "|_____|"
     };
 
-    public static String print(int num) {
-        return printAsciiArt(IntegerToRoman.convert(num));
+    // Definiamo le 6 righe dell'ASCII art per la lettera 'V'
+    private static final String[] V = {
+        "\\      /",
+        " \\    / ",
+        "  \\  /  ",
+        "   \\/   ",
+        "   ||   ",
+        "   ||   "
+    };
+
+    public static String print(int num) { //
+        return printAsciiArt(IntegerToRoman.convert(num)); //
     }
 
-    private static String printAsciiArt(String romanNumber) {
+    private static String printAsciiArt(String romanNumber) { //
         if (romanNumber == null || romanNumber.isEmpty()) {
             return "";
         }
 
         StringBuilder asciiArt = new StringBuilder();
 
-        // Ciclo principale: dobbiamo costruire il disegno riga per riga (da 0 a 5)
+        // Costruiamo il disegno riga per riga
         for (int riga = 0; riga < 6; riga++) {
-            
-            // Per ogni riga, scorriamo tutte le lettere del numero romano (es. "III")
             for (int i = 0; i < romanNumber.length(); i++) {
                 char lettera = romanNumber.charAt(i);
                 
                 if (lettera == 'I') {
                     asciiArt.append(I[riga]);
+                } else if (lettera == 'V') {
+                    asciiArt.append(V[riga]); // Usiamo il disegno della V
                 } else {
                     throw new IllegalArgumentException("Carattere non supportato per ora: " + lettera);
                 }
                 
-                // Aggiungiamo un piccolo spazio tra una lettera e l'altra per non farle attaccare
                 asciiArt.append(" ");
             }
-            
-            // Alla fine di ogni riga, andiamo a capo
             asciiArt.append("\n");
         }
 
