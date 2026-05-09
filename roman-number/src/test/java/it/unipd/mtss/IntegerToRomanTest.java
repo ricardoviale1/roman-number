@@ -20,18 +20,23 @@ public class IntegerToRomanTest {
     }
 
     @Test
-    public void testConvertFourHundredReturnsCD() {
-        assertEquals("CD", IntegerToRoman.convert(400));
-    }
-
-    @Test
     public void testConvertFiveHundredReturnsD() {
         assertEquals("D", IntegerToRoman.convert(500));
     }
 
+    @Test
+    public void testConvertNineHundredReturnsCM() {
+        assertEquals("CM", IntegerToRoman.convert(900));
+    }
+
+    @Test
+    public void testConvertOneThousandReturnsM() {
+        assertEquals("M", IntegerToRoman.convert(1000));
+    }
+
     @Test(expected = IllegalArgumentException.class)
-    public void testConvertFiveHundredAndOneThrowsException() {
-        // Ora l'errore deve scattare solo da 501 in su!
-        IntegerToRoman.convert(501);
+    public void testConvertOneThousandAndOneThrowsException() {
+        // Ora l'errore deve scattare solo da 1001 in su!
+        IntegerToRoman.convert(1001);
     }
 }

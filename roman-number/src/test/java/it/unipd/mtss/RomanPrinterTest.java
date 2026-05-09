@@ -92,4 +92,18 @@ public class RomanPrinterTest {
 
         assertEquals(expected, RomanPrinter.print(number));
     }
+    @Test
+    public void testPrintOneThousand() {
+        int number = 1000; // Corrisponde a "M"
+        
+        String expected = 
+            "|  \\/  | \n" +
+            "| .  . | \n" +
+            "| |\\/| | \n" +
+            "| |  | | \n" +
+            "| |  | | \n" +
+            "|_|  |_| \n";
+
+        assertEquals(expected, RomanPrinter.print(number));
+    }
 }
