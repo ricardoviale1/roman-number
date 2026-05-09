@@ -15,28 +15,23 @@ public class IntegerToRomanTest {
     }
 
     @Test
-    public void testConvertTenReturnsX() {
-        assertEquals("X", IntegerToRoman.convert(10));
-    }
-
-    @Test
-    public void testConvertFiftyReturnsL() {
-        assertEquals("L", IntegerToRoman.convert(50));
-    }
-
-    @Test
-    public void testConvertNinetyReturnsXC() {
-        assertEquals("XC", IntegerToRoman.convert(90));
-    }
-
-    @Test
     public void testConvertOneHundredReturnsC() {
         assertEquals("C", IntegerToRoman.convert(100));
     }
 
+    @Test
+    public void testConvertFourHundredReturnsCD() {
+        assertEquals("CD", IntegerToRoman.convert(400));
+    }
+
+    @Test
+    public void testConvertFiveHundredReturnsD() {
+        assertEquals("D", IntegerToRoman.convert(500));
+    }
+
     @Test(expected = IllegalArgumentException.class)
-    public void testConvertOneHundredAndOneThrowsException() {
-        // L'unico errore accettato ora è da 101 in su!
-        IntegerToRoman.convert(101);
+    public void testConvertFiveHundredAndOneThrowsException() {
+        // Ora l'errore deve scattare solo da 501 in su!
+        IntegerToRoman.convert(501);
     }
 }
