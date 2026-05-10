@@ -1,6 +1,4 @@
 # Progetto Convertitore Numeri Romani
-Java CI with Maven Coverage Status  
-
 ![Build Status](https://github.com/ricardoviale1/roman-number/actions/workflows/maven.yml/badge.svg)
 ![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen)
 ![Java](https://img.shields.io/badge/Java-11-orange)  
